@@ -16,7 +16,7 @@ import javafx.event.ActionEvent;
 public class Main extends Application{
     
     Scene scene1;
-    Button button1;
+    
 
     public static void main(String[] args) {
         launch(args);
@@ -24,11 +24,17 @@ public class Main extends Application{
 
     @Override
     public void start(Stage window) throws Exception{
-        button1 = new Button("Click me");
+        Button button1 = new Button("Click me");
+        Button button2 = new Button("yes or no");
+
         button1.setOnAction(e -> AlertBox.display("Alert Box", "Message I want displayed"));
+        button2.setOnAction(e -> {
+            boolean answer = ConfirmBox.display("Chocie Box", "Are you sure");
+            System.out.println(answer);
+        });
 
         VBox layout = new VBox();
-        layout.getChildren().addAll(button1);
+        layout.getChildren().addAll(button1, button2);
         Scene scene1 = new Scene(layout, 300, 250);
         window.setTitle("App");
         window.setScene(scene1);
