@@ -15,7 +15,8 @@ import javafx.event.ActionEvent;
 
 public class Main extends Application{
     
-    Scene scene1, scene2;
+    Scene scene1;
+    Button button1;
 
     public static void main(String[] args) {
         launch(args);
@@ -23,29 +24,14 @@ public class Main extends Application{
 
     @Override
     public void start(Stage window) throws Exception{
-        Label label1 = new Label("Welcome to the 1st scene");
-        Label label2 = new Label("Welcome to the 2nd scene");
-        Button button1 = new Button("Go to scene 2");
-        Button button2 = new Button("Go to scene 1");
-        button1.setOnAction(e -> window.setScene(scene2));
-        button2.setOnAction(e -> window.setScene(scene1));
+        button1 = new Button("Click me");
+        button1.setOnAction(e -> AlertBox.display("Alert Box", "Message I want displayed"));
 
-        //Layout 1 - Vertical Column
-        VBox layout1 = new VBox();
-        layout1.getChildren().addAll(label1, button1);
-        scene1 = new Scene(layout1, 500, 500);
-
-        //Layout 2 
-        VBox layout2 = new VBox();
-        layout2.getChildren().addAll(label2, button2);
-        scene2 = new Scene(layout2, 800, 300);
-
-        window.setScene(scene1);
+        VBox layout = new VBox();
+        layout.getChildren().addAll(button1);
+        Scene scene1 = new Scene(layout, 300, 250);
         window.setTitle("App");
+        window.setScene(scene1);
         window.show();
     }
-    //Parent root = FXMLLoader.load(getClass().getResource("firstAppfx.fxml"));
-    //stage.setScene(new Scene(root, 600, 400));
-    //stage.show();
-
 }
