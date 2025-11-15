@@ -1,6 +1,7 @@
 package firstAppfx;
 
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 
 import javafx.application.Application;
@@ -13,31 +14,44 @@ import javafx.scene.layout.VBox;
 import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
 
-public class Main extends Application{
-    
-    Scene scene1;
-    
+public class Main extends Application{    
 
     public static void main(String[] args) {
         launch(args);
     }
-
+    Stage window;
     @Override
-    public void start(Stage window) throws Exception{
-        Button button1 = new Button("Click me");
-        Button button2 = new Button("yes or no");
+    public void start(Stage primaryStage) throws Exception{
+        window = primaryStage;
+        window.setTitle("Close Program App");
 
-        button1.setOnAction(e -> AlertBox.display("Alert Box", "Message I want displayed"));
-        button2.setOnAction(e -> {
-            boolean answer = ConfirmBox.display("Chocie Box", "Are you sure");
-            System.out.println(answer);
+        window.setOnCloseRequest(e -> {
+            e.consume(); //dont do the event (close the program withought our logic)
+            closeProgram();
         });
 
-        VBox layout = new VBox();
-        layout.getChildren().addAll(button1, button2);
-        Scene scene1 = new Scene(layout, 300, 250);
-        window.setTitle("App");
-        window.setScene(scene1);
+        Button button1 = new Button("Close Program");
+
+        button1.setOnAction(e -> closeProgram());
+
+
+
+        StackPane layout = new StackPane();
+        layout.getChildren().add(button1);
+        layout.setAlignment(Pos.TOP_RIGHT);
+
+        Scene scene = new Scene(layout, 500, 400);
+        window.setScene(scene);
         window.show();
+    }
+    private void closeProgram(){
+        boolean answer = ConfirmBox.display("Confirm Box", "Are you sure you want to close this program");
+        if (answer){
+            System.out.println("Program closed");
+            window.close();
+        }
+        else{
+            System.out.println("Close Cancelled");
+        }
     }
 }

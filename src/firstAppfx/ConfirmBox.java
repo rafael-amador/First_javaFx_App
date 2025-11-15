@@ -32,11 +32,16 @@ public class ConfirmBox {
             window.close();
         });
 
+        
         HBox layout = new HBox(10);
-        layout.getChildren().addAll(label, yesButton, noButton);
+        layout.getChildren().addAll(yesButton, noButton);
         layout.setAlignment(Pos.CENTER);
 
-        Scene scene = new Scene(layout, 300, 200);
+        VBox layout1 = new VBox();
+        layout1.getChildren().addAll(label, layout);
+        layout1.setAlignment(Pos.CENTER);
+
+        Scene scene = new Scene(layout1, 300, 100);
         window.setScene(scene);
 
         window.showAndWait(); //used alongside with initModality
