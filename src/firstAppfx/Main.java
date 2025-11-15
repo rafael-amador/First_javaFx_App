@@ -5,6 +5,8 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 
+import java.util.InputMismatchException;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -42,26 +44,54 @@ public class Main extends Application{
         grid.setHgap(10);
         //----------------------------------------------------------------
 
+    
+        Label ageLabel = new Label("Age: ");
+        GridPane.setConstraints(ageLabel, 0, 0);
 
-        Button closeButton = new Button("Close Program");
-        closeButton.setOnAction(e -> closeProgram());
-        GridPane.setConstraints(closeButton, 2, 0);
+        Label userNameLabel = new Label("Username: ");
+        GridPane.setConstraints(userNameLabel, 0, 1);
 
-        Label label1 = new Label("Username: ");
-        GridPane.setConstraints(label1, 0, 0);
+        Label passLabel = new Label("Password: ");
+        GridPane.setConstraints(passLabel, 0, 2);
 
-        Label label2 = new Label("Password: ");
-        GridPane.setConstraints(label2, 0, 1);
+        TextField ageInput = new TextField(); //actual text pre put in 
+        ageInput.setPromptText("age"); //grayed out text
+        GridPane.setConstraints(ageInput, 1, 0); //position of element in grid compared to other elements
 
         TextField nameInput = new TextField("Bob"); //actual text pre put in 
         nameInput.setPromptText("im watching you"); //grayed out text
-        GridPane.setConstraints(nameInput, 1, 0); //position of element in grid compared to other elements
+        GridPane.setConstraints(nameInput, 1, 1); //position of element in grid compared to other elements
 
         TextField passInput = new TextField();
         passInput.setPromptText("type in here"); 
-        GridPane.setConstraints(passInput, 1, 1); 
+        GridPane.setConstraints(passInput, 1, 2); 
 
-        grid.getChildren().addAll(closeButton, label1, label2, nameInput, passInput);
+        Button loginButton = new Button("Login");
+        loginButton.setOnAction(e -> {
+            try{
+                int age = Integer.parseInt(ageInput.getText());
+                if (age > 100){
+                    throw new NumberFormatException("Age is too large");
+                }
+                if (age < 1){
+                    throw new NumberFormatException("Age is too small");
+                }
+                System.out.println("Age: " + age);
+                System.out.println("Username: " + nameInput.getText());
+                System.out.println("Password: " + passInput.getText());
+            }
+            catch(NumberFormatException error){
+                System.out.println("Input a integer for age section.");
+                System.out.println("Error: " + error.getMessage());
+            }
+        });
+        GridPane.setConstraints(loginButton, 1, 3);
+
+        Button closeButton = new Button("Close Program");
+        closeButton.setOnAction(e -> closeProgram());
+        GridPane.setConstraints(closeButton, 1, 4);
+
+        grid.getChildren().addAll(ageLabel, userNameLabel, ageInput, nameInput, passInput, loginButton);
 
 
         Scene scene = new Scene(grid, 500, 400);
