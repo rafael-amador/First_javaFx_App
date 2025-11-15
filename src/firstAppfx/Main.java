@@ -12,6 +12,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
+
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
@@ -77,6 +79,18 @@ public class Main extends Application{
         CheckBox checkBox = new CheckBox("New Acount?");
         GridPane.setConstraints(checkBox, 2, 3);
 
+        //ChocieBox
+        //getItems returns the ObservableList object which you can add items to
+        ChoiceBox<String> choiceBox = new ChoiceBox<>();
+        choiceBox.getItems().addAll("Option 1", "Option 2", "Option 3");
+        choiceBox.setValue("Choices");
+        GridPane.setConstraints(choiceBox, 3, 0);
+
+        Button choiceButton = new Button("Select Choice");
+        choiceButton.setOnAction(e -> {
+            System.out.println(choiceBox.getValue());
+        });
+        GridPane.setConstraints(choiceButton, 3, 1);
 
         Button loginButton = new Button("Login");
         GridPane.setConstraints(loginButton, 1, 3);
@@ -109,7 +123,7 @@ public class Main extends Application{
     });
 
 
-        grid.getChildren().addAll(ageLabel, passLabel, userNameLabel, ageInput, nameInput, passInput, loginButton, checkBox, closeButton);
+        grid.getChildren().addAll(ageLabel, passLabel, userNameLabel, ageInput, nameInput, passInput, loginButton, checkBox, closeButton, choiceBox, choiceButton);
 
 
         Scene scene = new Scene(grid, 500, 400);
