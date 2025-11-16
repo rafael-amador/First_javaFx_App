@@ -4,16 +4,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
-
 import java.util.InputMismatchException;
-
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.ChoiceBox;
-
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
@@ -86,6 +87,9 @@ public class Main extends Application{
         choiceBox.setValue("Choices");
         GridPane.setConstraints(choiceBox, 3, 0);
 
+        //listen for selection changes
+        choiceBox.getSelectionModel().selectedItemProperty().addListener( (v, oldValue, newValue) -> System.out.println(newValue));
+
         Button choiceButton = new Button("Select Choice");
         choiceButton.setOnAction(e -> {
             System.out.println(choiceBox.getValue());
@@ -117,13 +121,37 @@ public class Main extends Application{
                 }
             }
             catch(NumberFormatException error){
-                System.out.println("Input a integer for age section.");
                 System.out.println("Error: " + error.getMessage());
             }
-    });
+        });
 
+        //Combo box, doesnt need the use of a listener to make actions on choice selected
+        ComboBox<String> comboBox = new ComboBox<>();
+        comboBox.getItems().addAll("Apple", "Orange", "Banana", "Pear", "Pinnaple");
+        comboBox.setPromptText("Choose fruit");
+        comboBox.setEditable(true);
+        comboBox.setOnAction(e -> System.out.println("User Selected " + comboBox.getValue()));
+        GridPane.setConstraints(comboBox, 1, 5);
+        //---------------------------------------------------------------------------------------
+        //List View
+        ListView<String> listView = new ListView<>();
+        listView.getItems().addAll("List1", "List2", "List3", "List4");
+        listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        Button selectionButton = new Button("Print Selected");
+        GridPane.setConstraints(selectionButton, 2, 6);
+        selectionButton.setOnAction(e -> {
+            String message = "";
+            ObservableList<String> movies;
+            movies = listView.getSelectionModel().getSelectedItems();
 
-        grid.getChildren().addAll(ageLabel, passLabel, userNameLabel, ageInput, nameInput, passInput, loginButton, checkBox, closeButton, choiceBox, choiceButton);
+            for(String m : movies) {
+                message += m + "\n";
+            }
+            System.out.println(message);
+        });
+        GridPane.setConstraints(listView, 1, 6);
+        //---------------------------------------------------------------------------------------
+        grid.getChildren().addAll(selectionButton, listView, comboBox, ageLabel, passLabel, userNameLabel, ageInput, nameInput, passInput, loginButton, checkBox, closeButton, choiceBox, choiceButton);
 
 
         Scene scene = new Scene(grid, 500, 400);
