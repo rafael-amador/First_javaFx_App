@@ -3,6 +3,14 @@
     "configurations": [
         {
             "type": "java",
+            "name": "GridDemo",
+            "request": "launch",
+            "mainClass": "Demos.GridDemo",
+            "projectName": "First_JaveFX_App_9a6650f8",
+            "vmArgs": "--module-path C:/Users/rafam/Java/javafx-sdk-25.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "TopMenuDemo",
             "request": "launch",
             "mainClass": "Demos.TopMenuDemo",
