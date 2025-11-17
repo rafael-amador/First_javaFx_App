@@ -27,6 +27,8 @@ public class GridDemo extends Application{
 
         //name label
         Label nameLabel = new Label("Username: ");
+        //setID
+        nameLabel.setId("bold-label");
         GridPane.setConstraints(nameLabel, 0, 0);
 
         //pass label
@@ -47,8 +49,14 @@ public class GridDemo extends Application{
         Button loginButton = new Button("Login");
         GridPane.setConstraints(loginButton, 1, 2);
 
+        //sign up button
+        Button signUpButton = new Button("Sign up");
+        //change Style manually
+        signUpButton.getStyleClass().add("button-blue");
+        GridPane.setConstraints(signUpButton, 1, 3);
+
         //set layout
-        gridLayout.getChildren().addAll(nameLabel, passLabel, nameInput, passwordInput, loginButton);
+        gridLayout.getChildren().addAll(nameLabel, passLabel, nameInput, passwordInput, loginButton, signUpButton);
         Scene scene = new Scene(gridLayout, 300, 200);
         scene.getStylesheets().add(getClass().getResource("GridDemo.css").toExternalForm());
         window.setScene(scene);

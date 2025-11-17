@@ -5,3 +5,16 @@
 .label {
     -fx-text-fill: #e8e8e8;
 }
+.button {
+    -fx-background-color: #ff0000;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 4;
+}
+.button-blue{
+    -fx-background-color: #00aaff;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 4;
+}
+#bold-label {
+    -fx-font-weight: bold;
+}
