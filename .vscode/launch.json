@@ -5,6 +5,14 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
+            "mainClass": "SceneBuilderDemo.Main",
+            "projectName": "First_JaveFX_App_9a6650f8",
+            "vmArgs": "--module-path C:/Users/rafam/Java/javafx-sdk-25.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
             "mainClass": "FXMLDemo2.Main",
             "projectName": "First_JaveFX_App_9a6650f8",
             "vmArgs": "--module-path C:/Users/rafam/Java/javafx-sdk-25.0.1/lib --add-modules javafx.controls,javafx.fxml"
