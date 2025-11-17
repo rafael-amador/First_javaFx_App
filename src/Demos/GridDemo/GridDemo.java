@@ -1,4 +1,4 @@
-package Demos;
+package Demos.GridDemo;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -16,6 +16,7 @@ public class GridDemo extends Application{
     public static void main(String[] args){
         launch(args);
     }
+    @Override
     public void start(Stage primaryStage) throws Exception{
         window = primaryStage;
         window.setTitle("Into to CSS");

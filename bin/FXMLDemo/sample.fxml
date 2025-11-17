@@ -1,0 +1,12 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="400.0" prefWidth="600.0"
+      xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="FXMLDemo.Controller"> <!-- Where controller file is located -->
+    
+    <Label text="I love bacon"/>
+    <Button text="Submit" fx:id="button" onAction="#handleButtonClick"/> <!-- id refers to variable name in controller--> <!-- "#handleButtonClick" refers to function name in controller -->
+    
+</VBox>

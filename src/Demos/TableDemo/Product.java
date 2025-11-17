@@ -1,4 +1,4 @@
-package Demos;
+package Demos.TableDemo;
 
 public class Product {
     String name;

@@ -1,4 +1,4 @@
-package Demos;
+package Demos.TableDemo;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

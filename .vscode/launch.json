@@ -3,9 +3,49 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "FXMLDemo2.Main",
+            "projectName": "First_JaveFX_App_9a6650f8",
+            "vmArgs": "--module-path C:/Users/rafam/Java/javafx-sdk-25.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "FXMLDemo.Main",
+            "projectName": "First_JaveFX_App_9a6650f8",
+            "vmArgs": "--module-path C:/Users/rafam/Java/javafx-sdk-25.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "PropertiesDemo",
+            "request": "launch",
+            "mainClass": "Demos.PropertiesDemo.PropertiesDemo",
+            "projectName": "First_JaveFX_App_9a6650f8",
+            "vmArgs": "--module-path C:/Users/rafam/Java/javafx-sdk-25.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "TableDemo",
+            "request": "launch",
+            "mainClass": "Demos.TableDemo.TableDemo",
+            "projectName": "First_JaveFX_App_9a6650f8",
+            "vmArgs": "--module-path C:/Users/rafam/Java/javafx-sdk-25.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "GridDemo",
             "request": "launch",
-            "mainClass": "Demos.GridDemo",
+            "mainClass": "Demos.GridDemo.GridDemo",
+            "projectName": "First_JaveFX_App_9a6650f8",
+            "vmArgs": "--module-path C:/Users/rafam/Java/javafx-sdk-25.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "BindingDemo",
+            "request": "launch",
+            "mainClass": "Demos.BindingDemo",
             "projectName": "First_JaveFX_App_9a6650f8",
             "vmArgs": "--module-path C:/Users/rafam/Java/javafx-sdk-25.0.1/lib --add-modules javafx.controls,javafx.fxml"
         },
@@ -14,14 +54,6 @@
             "name": "TopMenuDemo",
             "request": "launch",
             "mainClass": "Demos.TopMenuDemo",
-            "projectName": "First_JaveFX_App_9a6650f8",
-            "vmArgs": "--module-path C:/Users/rafam/Java/javafx-sdk-25.0.1/lib --add-modules javafx.controls,javafx.fxml"
-        },
-        {
-            "type": "java",
-            "name": "TableDemo",
-            "request": "launch",
-            "mainClass": "Demos.TableDemo",
             "projectName": "First_JaveFX_App_9a6650f8",
             "vmArgs": "--module-path C:/Users/rafam/Java/javafx-sdk-25.0.1/lib --add-modules javafx.controls,javafx.fxml"
         },
