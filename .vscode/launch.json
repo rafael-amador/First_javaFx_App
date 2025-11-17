@@ -1,15 +1,36 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
         {
             "type": "java",
-            "name": "Current File",
+            "name": "TopMenuDemo",
             "request": "launch",
-            "mainClass": "firstAppfx.Main",
+            "mainClass": "Demos.TopMenuDemo",
+            "projectName": "First_JaveFX_App_9a6650f8",
+            "vmArgs": "--module-path C:/Users/rafam/Java/javafx-sdk-25.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "TableDemo",
+            "request": "launch",
+            "mainClass": "Demos.TableDemo",
+            "projectName": "First_JaveFX_App_9a6650f8",
+            "vmArgs": "--module-path C:/Users/rafam/Java/javafx-sdk-25.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "TreeDemo",
+            "request": "launch",
+            "mainClass": "Demos.TreeDemo",
+            "projectName": "First_JaveFX_App_9a6650f8",
+            "vmArgs": "--module-path C:/Users/rafam/Java/javafx-sdk-25.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "ButtonDemo",
+            "request": "launch",
+            "mainClass": "Demos.ButtonDemo",
+            "projectName": "First_JaveFX_App_9a6650f8",
             "vmArgs": "--module-path C:/Users/rafam/Java/javafx-sdk-25.0.1/lib --add-modules javafx.controls,javafx.fxml"
         }
     ]

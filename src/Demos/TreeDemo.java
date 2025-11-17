@@ -1,4 +1,4 @@
-package firstAppfx;
+package Demos;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -8,16 +8,18 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.layout.StackPane;
 
 
-public class Main extends Application{    
+public class TreeDemo extends Application{    
+
     Stage window;
     TreeView<String> tree;
+
     public static void main(String[] args) {
         launch(args);
     }
     @Override
     public void start(Stage primaryStage) throws Exception{
         window = primaryStage;
-        window.setTitle("Tree View");
+        window.setTitle("Tree Demo");
         
         //tree
         TreeItem<String> root, bucky, megan;
